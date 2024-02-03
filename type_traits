@@ -32,13 +32,13 @@ template< bool B, class T = void >
 using enable_if_t = typename enable_if<B,T>::type;
 
 template<class T>
-struct is_array : std::false_type {};
+struct is_array : vl::false_type {};
  
 template<class T>
-struct is_array<T[]> : std::true_type {};
+struct is_array<T[]> : vl::true_type {};
  
-template<class T, std::size_t N>
-struct is_array<T[N]> : std::true_type {};
+template<class T, vl::size_t N>
+struct is_array<T[N]> : vl::true_type {};
 
 template<class T>
 struct remove_extent { using type = T; };
@@ -46,6 +46,6 @@ struct remove_extent { using type = T; };
 template<class T>
 struct remove_extent<T[]> { using type = T; };
  
-template<class T, std::size_t N>
+template<class T, vl::size_t N>
 struct remove_extent<T[N]> { using type = T; };
 }
