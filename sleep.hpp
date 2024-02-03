@@ -4,9 +4,9 @@
 
 namespace ardent
 {
-    void sleep(std::seconds duration);
-    void sleep(std::milliseconds duration);
-    void sleep(std::microseconds duration);
-    std::milliseconds millis();
-    std::microseconds micros();
+    void sleep(estd::seconds duration);
+    void sleep(estd::milliseconds duration);
+    void sleep(estd::microseconds duration);
+    estd::milliseconds millis();
+    estd::microseconds micros();
 }

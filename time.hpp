@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <stddef.h>
 
-namespace vl
+namespace estd
 {
 
 struct microseconds
