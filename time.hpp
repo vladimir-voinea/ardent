@@ -1,6 +1,6 @@
 #pragma once
 
-#include "type_traits"
+#include <type_traits>
 #include <stddef.h>
 
 namespace vl
@@ -34,118 +34,118 @@ struct hours
 template<typename To, typename From>
 To time_cast(From from)
 {
-    if constexpr (vl::is_same<To, microseconds>::value)
+    if constexpr (std::is_same<To, microseconds>::value)
     {
-        if constexpr (vl::is_same<From, microseconds>::value)
+        if constexpr (std::is_same<From, microseconds>::value)
         {
             return from;
         }
-        else if constexpr (vl::is_same<From, milliseconds>::value)
+        else if constexpr (std::is_same<From, milliseconds>::value)
         {
             return {from.value * 1000};
         }
-        else if constexpr (vl::is_same<From, seconds>::value)
+        else if constexpr (std::is_same<From, seconds>::value)
         {
             return {from.value * 1000000};
         }
-        else if constexpr (vl::is_same<From, minutes>::value)
+        else if constexpr (std::is_same<From, minutes>::value)
         {
             return {from.value * 60000000};
         }
-        else if constexpr (vl::is_same<From, hours>::value)
+        else if constexpr (std::is_same<From, hours>::value)
         {
             return {from.value * 3600000000};
         }
     }
-    else if constexpr (vl::is_same<To, milliseconds>::value)
+    else if constexpr (std::is_same<To, milliseconds>::value)
     {
-        if constexpr (vl::is_same<From, microseconds>::value)
+        if constexpr (std::is_same<From, microseconds>::value)
         {
             return {from.value / 1000};
         }
-        else if constexpr (vl::is_same<From, milliseconds>::value)
+        else if constexpr (std::is_same<From, milliseconds>::value)
         {
             return from;
         }
-        else if constexpr (vl::is_same<From, seconds>::value)
+        else if constexpr (std::is_same<From, seconds>::value)
         {
             return {from.value * 1000};
         }
-        else if constexpr (vl::is_same<From, minutes>::value)
+        else if constexpr (std::is_same<From, minutes>::value)
         {
             return {from.value * 60000};
         }
-        else if constexpr (vl::is_same<From, hours>::value)
+        else if constexpr (std::is_same<From, hours>::value)
         {
             return {from.value * 3600000};
         }
     }
-    else if constexpr (vl::is_same<To, seconds>::value)
+    else if constexpr (std::is_same<To, seconds>::value)
     {
-        if constexpr (vl::is_same<From, microseconds>::value)
+        if constexpr (std::is_same<From, microseconds>::value)
         {
             return {from.value / 1000000};
         }
-        else if constexpr (vl::is_same<From, milliseconds>::value)
+        else if constexpr (std::is_same<From, milliseconds>::value)
         {
             return {from.value / 1000};
         }
-        else if constexpr (vl::is_same<From, seconds>::value)
+        else if constexpr (std::is_same<From, seconds>::value)
         {
             return from;
         }
-        else if constexpr (vl::is_same<From, minutes>::value)
+        else if constexpr (std::is_same<From, minutes>::value)
         {
             return {from.value * 60};
         }
-        else if constexpr (vl::is_same<From, hours>::value)
+        else if constexpr (std::is_same<From, hours>::value)
         {
             return {from.value * 3600};
         }
     }
-    else if constexpr (vl::is_same<To, minutes>::value)
+    else if constexpr (std::is_same<To, minutes>::value)
     {
-        if constexpr (vl::is_same<From , microseconds>::value)
+        if constexpr (std::is_same<From , microseconds>::value)
         {
             return {from.value / 60000000};
         }
-        else if constexpr (vl::is_same<From, milliseconds>::value)
+        else if constexpr (std::is_same<From, milliseconds>::value)
         {
             return {from.value / 60000};
         }
-        else if constexpr (vl::is_same<From, seconds>::value)
+        else if constexpr (std::is_same<From, seconds>::value)
         {
             return {from.value / 60};
         }
-        else if constexpr (vl::is_same<From, minutes>::value)
+        else if constexpr (std::is_same<From, minutes>::value)
         {
             return from;
         }
-        else if constexpr (vl::is_same<From, hours>::value)
+        else if constexpr (std::is_same<From, hours>::value)
         {
             return {from.value * 60};
         }
 
     }
-    else if constexpr (vl::is_same<To, hours>::value)
+    else if constexpr (std::is_same<To, hours>::value)
     {
-        if constexpr (vl::is_same<From, microseconds>::value)
+        if constexpr (std::is_same<From, microseconds>::value)
         {
             return {from.value / 3600000000};
         }
-        else if constexpr (vl::is_same<From, milliseconds>::value)
+        else if constexpr (std::is_same<From, milliseconds>::value)
         {
             return {from.value / 3600000};
         }
-        else if constexpr (vl::is_same<From, seconds>::value)
+        else if constexpr (std::is_same<From, seconds>::value)
         {
             return {from.value / 3600};
         }
-        else if constexpr (vl::is_same<From, minutes>::value)
+        else if constexpr (std::is_same<From, minutes>::value)
         {
             return {from.value / 60};
         }
-        else if constexpr (vl::is_same<From, hours>::value)
+        else if constexpr (std::is_same<From, hours>::value)
         {
             return from;
         }

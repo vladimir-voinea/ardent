@@ -3,27 +3,27 @@
 
 namespace ardent
 {
-    void sleep(vl::seconds duration)
+    void sleep(std::seconds duration)
     {
-        sleep(vl::time_cast<vl::milliseconds>(duration));
+        sleep(std::time_cast<std::milliseconds>(duration));
     }
 
-    void sleep(vl::milliseconds duration)
+    void sleep(std::milliseconds duration)
     {
         delay(duration.value);
     }
 
-    void sleep(vl::microseconds duration)
+    void sleep(std::microseconds duration)
     {
         delayMicroseconds(duration.value);
     }
 
-    vl::milliseconds millis()
+    std::milliseconds millis()
     {
         return {::millis()};
     }
 
-    vl::microseconds micros()
+    std::microseconds micros()
     {
         return {::micros()};
     }
