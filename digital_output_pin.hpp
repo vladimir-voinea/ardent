@@ -1,5 +1,8 @@
 #pragma once
 
+namespace ardent
+{
+ 
 class digital_output_pin
 {
 public:
@@ -13,3 +16,5 @@ public:
 private:
     int pin_number;
 };
+
+}

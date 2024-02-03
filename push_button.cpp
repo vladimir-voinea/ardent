@@ -1,5 +1,8 @@
 #include "push_button.hpp"
 
+namespace ardent
+{
+ 
 push_button::push_button(digital_input_pin pin)
 : m_pin(pin)
 {
@@ -18,4 +21,6 @@ bool push_button::is_released() const
 digital_input_pin push_button::get_pin() const
 {
     return m_pin;
+}
+
 }

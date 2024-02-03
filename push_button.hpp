@@ -2,6 +2,9 @@
 
 #include "digital_input_pin.hpp"
 
+namespace ardent
+{
+ 
 class push_button
 {
 public:
@@ -15,3 +18,5 @@ public:
 private:
     digital_input_pin m_pin;
 };
+
+}

@@ -1,6 +1,9 @@
 #include "digital_output_pin.hpp"
 #include "Arduino.h"
 
+namespace ardent
+{
+    
 digital_output_pin::digital_output_pin(int pin_number)
 : pin_number(pin_number)
 {
@@ -20,4 +23,6 @@ void digital_output_pin::set_low()
 int digital_output_pin::get_pin_number() const
 {
     return pin_number;
+}
+
 }

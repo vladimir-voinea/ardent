@@ -2,6 +2,9 @@
 
 #include <stddef.h>
 
+namespace vl
+{
+
 // Forward declaration of the tuple template
 template <typename... Ts>
 struct tuple;
@@ -28,7 +31,8 @@ struct tuple<T> {
     constexpr size_t size() const { return 1; }
 };
 
-
+namespace detail
+{
 // Implementation for `get` requires a way to "count down" to the element we're interested in.
 // We'll use a size_t template parameter for the index, and specialize for the base case of 0.
 
@@ -48,11 +52,12 @@ struct tuple_getter<0, T, Ts...> {
         return t.head;
     }
 };
+}
 
 // User-facing `get` function template
 template <size_t idx, typename... Ts>
 auto& get(tuple<Ts...>& t) {
-    return tuple_getter<idx, Ts...>::get(t);
+    return detail::tuple_getter<idx, Ts...>::get(t);
 }
 
 // Helper to apply a function to each element of the tuple
@@ -66,4 +71,6 @@ void apply_to_each(F f, tuple<T, Ts...>& t) {
 template <typename F, typename T>
 void apply_to_each(F f, tuple<T>& t) {
     f(t.head); // Apply the function to the last element
+}
+
 }

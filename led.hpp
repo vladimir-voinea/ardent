@@ -2,6 +2,9 @@
 
 #include "digital_output_pin.hpp"
 
+namespace ardent
+{
+ 
 class led
 {
 public:
@@ -12,3 +15,5 @@ public:
 private:
   digital_output_pin m_pin;
 };
+
+}
