@@ -7,6 +7,12 @@ namespace vl
 {
 
 template <typename T>
+class unique_ptr;
+
+template <typename T>
+void swap(unique_ptr<T>& lhs, unique_ptr<T>& rhs);
+
+template <typename T>
 class unique_ptr
 {
 public:
