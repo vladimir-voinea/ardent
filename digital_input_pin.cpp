@@ -5,9 +5,9 @@ namespace ardent
 {
 
 digital_input_pin::digital_input_pin(int pin_number) 
-: pin_number(pin_number)
+: pin(pin_number)
 {
-    pinMode(pin_number, INPUT_PULLUP);
+    pinMode(pin_number, INPUT);
 }
 
 bool digital_input_pin::is_high() const
@@ -20,9 +20,5 @@ bool digital_input_pin::is_low() const
     return digitalRead(pin_number) == LOW;
 }
 
-int digital_input_pin::get_pin_number() const
-{
-    return pin_number;
-}
 
 }
