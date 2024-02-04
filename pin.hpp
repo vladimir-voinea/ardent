@@ -10,7 +10,7 @@ class pin
 public:
     pin(uint8_t pin_number);
 
-    int get_pin_number() const;
+    uint8_t get_pin_number() const;
 
 protected:
     uint8_t pin_number;
