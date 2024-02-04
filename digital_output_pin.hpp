@@ -5,10 +5,10 @@
 namespace ardent
 {
  
-class digital_output_pin : public pin
+class digital_output_pin final : public pin
 {
 public:
-    digital_output_pin(int pin_number);
+    digital_output_pin(uint8_t pin_number);
 
     void set_high();
     void set_low();

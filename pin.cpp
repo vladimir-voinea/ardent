@@ -3,11 +3,11 @@
 namespace ardent
 {
 
-pin::pin(int pin_number)
+pin::pin(uint8_t pin_number)
 : pin_number(pin_number)
 {}
 
-int pin::get_pin_number() const
+uint8_t pin::get_pin_number() const
 {
     return pin_number;
 }

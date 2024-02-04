@@ -5,10 +5,10 @@
 namespace ardent
 {
 
-class digital_input_pullup_pin : public digital_input_pin
+class digital_input_pullup_pin final : public digital_input_pin
 {
 public:
-    digital_input_pullup_pin(int pin_number);
+    digital_input_pullup_pin(uint8_t pin_number);
 };
 
 }

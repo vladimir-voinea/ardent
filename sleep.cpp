@@ -10,12 +10,12 @@ namespace ardent
 
     void sleep(estd::milliseconds duration)
     {
-        delay(duration.value);
+        ::delay(duration.value);
     }
 
     void sleep(estd::microseconds duration)
     {
-        delayMicroseconds(duration.value);
+        ::delayMicroseconds(duration.value);
     }
 
     estd::milliseconds millis()

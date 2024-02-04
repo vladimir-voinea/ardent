@@ -1,17 +1,19 @@
 #pragma once
 
+#include <stddef.h>
+
 namespace ardent
 {
 
 class pin
 {
 public:
-    pin(int pin_number);
+    pin(uint8_t pin_number);
 
     int get_pin_number() const;
 
 protected:
-    int pin_number;
+    uint8_t pin_number;
 };
 
 }

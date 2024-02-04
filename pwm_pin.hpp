@@ -5,7 +5,7 @@
 namespace ardent
 {
     
-class pwm_pin : public pin
+class pwm_pin final : public pin
 {
 public:
     pwm_pin(int pin_number);
