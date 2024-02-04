@@ -11,6 +11,6 @@ namespace ardent
     {
         const auto distance = centimeters{static_cast<decltype(centimeters::value)>(m_sr04.Distance())};
         return distance.value >= ultrasonic_sensor::min_distance.value 
-                && distance.value <= ultrasonic_sensor::max_distance.value ? distance : {};
+                && distance.value <= ultrasonic_sensor::max_distance.value ? distance : std::optional<centimeters>{};
     }
 }
