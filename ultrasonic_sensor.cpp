@@ -7,7 +7,7 @@ namespace ardent
     {
     }
 
-    optional<centimeters> ultrasonic_sensor::get_distance()
+    std::optional<centimeters> ultrasonic_sensor::get_distance()
     {
         const auto distance = m_sr04.get_distance();
         return distance >= ultrasonic_sensor::min_distance && distance <= ultrasonic_sensor::max_distance ? {distance} : {};
