@@ -3,12 +3,13 @@
 #include <push_button.hpp>
 #include <time.hpp>
 #include <sleep.hpp>
+#include "i_loop_observer.hpp"
 
 namespace ardent
 {
 
 template <typename TCallback>
-class debounced_button
+class debounced_button : public i_loop_observer
 {
 public:
     debounced_button(push_button button, TCallback&& press_callback)
@@ -16,7 +17,7 @@ public:
     , m_press_callback(press_callback)
     {}
 
-    void update()
+    void update() override
     {
         if (m_button.is_pressed() && !m_last_button_state)
         {

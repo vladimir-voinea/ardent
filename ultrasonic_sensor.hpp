@@ -22,7 +22,7 @@ namespace ardent
         static constexpr millimeters error = millimeters{3};
     public:
         ultrasonic_sensor(pin echo_pin, pin trigger_pin);
-        std::optional<centimeters> get_distance();
+        centimeters get_distance();
 
     private:
         SR04 m_sr04;
