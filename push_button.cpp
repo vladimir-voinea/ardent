@@ -8,6 +8,11 @@ push_button::push_button(digital_input_pullup_pin pin)
 {
 }
 
+push_button::reading_type push_button::read() const
+{
+    return m_pin.is_low();
+}
+
 bool push_button::is_pressed() const
 {
     return m_pin.is_low();
