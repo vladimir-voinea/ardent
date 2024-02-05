@@ -98,4 +98,4 @@ enum class pitches : frequency
     ds8 = 4978,
 };
 
-}
+} // namespace ardent

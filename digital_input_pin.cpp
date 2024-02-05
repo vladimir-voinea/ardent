@@ -4,8 +4,7 @@
 namespace ardent
 {
 
-digital_input_pin::digital_input_pin(uint8_t pin_number) 
-: pin(pin_number)
+digital_input_pin::digital_input_pin(uint8_t pin_number) : pin(pin_number)
 {
     ::pinMode(pin_number, INPUT);
 }
@@ -20,5 +19,4 @@ bool digital_input_pin::is_low() const
     return ::digitalRead(pin_number) == LOW;
 }
 
-
-}
+} // namespace ardent

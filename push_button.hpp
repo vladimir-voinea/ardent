@@ -4,10 +4,10 @@
 
 namespace ardent
 {
- 
+
 class push_button
 {
-public:
+  public:
     using reading_type = bool;
 
     push_button(digital_input_pullup_pin pin);
@@ -18,9 +18,9 @@ public:
     bool is_released() const;
 
     digital_input_pullup_pin get_pin() const;
-    
-private:
+
+  private:
     digital_input_pullup_pin m_pin;
 };
 
-}
+} // namespace ardent

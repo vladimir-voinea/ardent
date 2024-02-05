@@ -2,5 +2,5 @@
 
 namespace ardent
 {
-    using frequency = unsigned int;
+using frequency = unsigned int;
 }

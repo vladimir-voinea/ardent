@@ -3,9 +3,8 @@
 
 namespace ardent
 {
-    
-digital_output_pin::digital_output_pin(uint8_t pin_number)
-: pin(pin_number)
+
+digital_output_pin::digital_output_pin(uint8_t pin_number) : pin(pin_number)
 {
     ::pinMode(pin_number, OUTPUT);
 }
@@ -20,4 +19,4 @@ void digital_output_pin::set_low()
     ::digitalWrite(pin_number, LOW);
 }
 
-}
+} // namespace ardent

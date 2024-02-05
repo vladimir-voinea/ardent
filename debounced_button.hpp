@@ -1,21 +1,20 @@
 #pragma once
 
-#include <push_button.hpp>
-#include <time.hpp>
-#include <sleep.hpp>
 #include "i_loop_observer.hpp"
+#include <push_button.hpp>
+#include <sleep.hpp>
+#include <time.hpp>
 
 namespace ardent
 {
 
-template <typename TCallback>
-class debounced_button : public i_loop_observer
+template <typename TCallback> class debounced_button : public i_loop_observer
 {
-public:
-    debounced_button(push_button button, TCallback&& press_callback)
-    : m_button(button)
-    , m_press_callback(press_callback)
-    {}
+  public:
+    debounced_button(push_button button, TCallback &&press_callback)
+        : m_button(button), m_press_callback(press_callback)
+    {
+    }
 
     void update() override
     {
@@ -31,7 +30,7 @@ public:
                 m_press_callback();
                 m_last_button_state = false;
             }
-        }        
+        }
     }
 
     void set_debounce_delay(estd::milliseconds delay)
@@ -49,11 +48,11 @@ public:
         return m_button;
     }
 
-private:
+  private:
     push_button m_button;
     TCallback m_press_callback;
     estd::milliseconds m_last_pressed_time;
     estd::milliseconds m_debounce_delay = estd::milliseconds{50};
     bool m_last_button_state;
 };
-}
+} // namespace ardent

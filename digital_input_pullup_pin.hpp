@@ -7,8 +7,8 @@ namespace ardent
 
 class digital_input_pullup_pin final : public digital_input_pin
 {
-public:
+  public:
     digital_input_pullup_pin(uint8_t pin_number);
 };
 
-}
+} // namespace ardent

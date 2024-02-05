@@ -1,14 +1,14 @@
 #pragma once
 
-#include "pin.hpp"
 #include "i_output_pin.hpp"
+#include "pin.hpp"
 
 namespace ardent
 {
-    
+
 class pwm_pin final : public pin, public i_output_pin
 {
-public:
+  public:
     pwm_pin(int pin_number);
 
     void set_duty_cycle(int duty_cycle);
@@ -16,4 +16,4 @@ public:
     void set_low() override;
 };
 
-}
+} // namespace ardent

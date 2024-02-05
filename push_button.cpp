@@ -2,9 +2,8 @@
 
 namespace ardent
 {
- 
-push_button::push_button(digital_input_pullup_pin pin)
-: m_pin(pin)
+
+push_button::push_button(digital_input_pullup_pin pin) : m_pin(pin)
 {
 }
 
@@ -28,4 +27,4 @@ digital_input_pullup_pin push_button::get_pin() const
     return m_pin;
 }
 
-}
+} // namespace ardent

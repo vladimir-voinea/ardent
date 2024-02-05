@@ -7,13 +7,13 @@ namespace ardent
 
 class pin
 {
-public:
+  public:
     pin(uint8_t pin_number);
 
     uint8_t get_pin_number() const;
 
-protected:
+  protected:
     uint8_t pin_number;
 };
 
-}
+} // namespace ardent
