@@ -196,6 +196,8 @@
 #define STATE_SPACE    4
 #define STATE_STOP     5
 
+#define RAWBUF  101  // Maximum length of raw duration buffer
+
 // information for the interrupt handler
 typedef struct {
   uint8_t recvpin;           // pin for IR data from detector
