@@ -18,6 +18,8 @@ class passive_buzzer : public i_loop_observer
 
     void beep(frequency freq, estd::milliseconds duration, std::function<void(void)> callback);
     void mute(estd::milliseconds duration, std::function<void(void)> callback);
+    void mute();
+    void unmute();
 
     void update() override;
     bool is_beeping() const;

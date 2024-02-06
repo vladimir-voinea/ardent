@@ -75,6 +75,16 @@ void passive_buzzer::mute(estd::milliseconds duration, std::function<void(void)>
     m_current_mute = current_beep_info{ardent::millis(), duration};
 }
 
+void passive_buzzer::mute()
+{
+    m_current_mute = m_current_mute{~0, estd::milliseconds{0}};
+}
+
+void passive_buzzer::unmute()
+{
+    m_current_mute = m_current_mute{0, estd::milliseconds{0}};
+}
+
 bool passive_buzzer::is_beeping() const
 {
     return std::get<0>(m_current_beep).value;
