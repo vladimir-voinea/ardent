@@ -9,7 +9,7 @@ passive_buzzer::passive_buzzer(digital_output_pin pin) : m_pin(pin)
 
 void passive_buzzer::beep(frequency freq, estd::milliseconds duration, std::function<void(void)> callback)
 {
-    if (std::get<0>(m_current_mute).value || std::get<0>(m_current_mute).value == ~0u)
+    if (is_muted())
     {
         return;
     }
@@ -21,7 +21,7 @@ void passive_buzzer::beep(frequency freq, estd::milliseconds duration, std::func
 
 void passive_buzzer::start_beeping(frequency freq)
 {
-    if (std::get<0>(m_current_mute).value || std::get<0>(m_current_mute).value == ~0u)
+    if (is_muted())
     {
         return;
     }
@@ -32,11 +32,6 @@ void passive_buzzer::start_beeping(frequency freq)
 
 void passive_buzzer::stop_beeping()
 {
-    if (std::get<0>(m_current_mute).value)
-    {
-        return;
-    }
-
     ::noTone(m_pin.get_pin_number());
     m_current_beep = {{0}, {0}};
 }
@@ -77,7 +72,7 @@ void passive_buzzer::mute(estd::milliseconds duration, std::function<void(void)>
 
 void passive_buzzer::mute()
 {
-    m_current_mute = {estd::milliseconds{~0u}, estd::milliseconds{0}};
+    m_current_mute = {estd::milliseconds{millis()}, estd::milliseconds{~0u}};
 }
 
 void passive_buzzer::unmute()
@@ -88,5 +83,10 @@ void passive_buzzer::unmute()
 bool passive_buzzer::is_beeping() const
 {
     return std::get<0>(m_current_beep).value;
+}
+
+bool passive_buzzer::is_muted() const
+{
+    return std::get<0>(m_current_mute).value || std::get<1>(m_current_mute).value == ~0u;
 }
 } // namespace ardent

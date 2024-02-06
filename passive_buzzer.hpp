@@ -23,6 +23,7 @@ class passive_buzzer : public i_loop_observer
 
     void update() override;
     bool is_beeping() const;
+    bool is_muted() const;
 
     void start_beeping(frequency freq);
     void stop_beeping();
