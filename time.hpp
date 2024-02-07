@@ -3,7 +3,7 @@
 #include <stddef.h>
 #include <type_traits>
 
-namespace estd
+namespace ardent
 {
 
 struct microseconds
