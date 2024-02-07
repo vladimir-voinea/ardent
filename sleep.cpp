@@ -5,7 +5,7 @@ namespace ardent
 {
 void sleep(ardent::seconds duration)
 {
-    sleep(estd::time_cast<ardent::milliseconds>(duration));
+    sleep(ardent::time_cast<ardent::milliseconds>(duration));
 }
 
 void sleep(ardent::milliseconds duration)
