@@ -1,5 +1,7 @@
 #include "remote_control.hpp"
 
+#ifdef ARDUINO
+
 namespace ardent
 {
 
@@ -76,3 +78,5 @@ String to_string(remote_control_buttons button)
 }
 
 } // namespace ardent
+
+#endif // ARDUINO

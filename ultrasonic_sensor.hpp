@@ -29,3 +29,5 @@ class ultrasonic_sensor
     SR04 m_sr04;
 };
 } // namespace ardent
+
+#endif // ARDUINO

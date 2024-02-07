@@ -1,5 +1,7 @@
 #include "ultrasonic_sensor.hpp"
 
+#ifdef ARDUINO
+
 namespace ardent
 {
 ultrasonic_sensor::ultrasonic_sensor(pin echo_pin, pin trigger_pin)

@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ARDUINO
+
 #include <Arduino.h>
 #include <detail/IRremote/IRremote.h>
 
@@ -51,3 +53,5 @@ class remote_control final : public i_loop_observer
     callback_type m_on_button_pressed;
 };
 } // namespace ardent
+
+#endif // ARDUINO
