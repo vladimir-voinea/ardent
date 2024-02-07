@@ -15,3 +15,5 @@ centimeters ultrasonic_sensor::get_distance()
     return distance;
 }
 } // namespace ardent
+
+#endif // ARDUINO

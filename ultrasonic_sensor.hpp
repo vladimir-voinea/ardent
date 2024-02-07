@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ARDUINO
+
 #include "detail/HC-SR04/SR04.h"
 #include "distance.hpp"
 #include "pin.hpp"
