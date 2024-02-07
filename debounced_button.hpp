@@ -33,12 +33,12 @@ template <typename TCallback> class debounced_button : public i_loop_observer
         }
     }
 
-    void set_debounce_delay(estd::milliseconds delay)
+    void set_debounce_delay(ardent::milliseconds delay)
     {
         m_debounce_delay = delay;
     }
 
-    estd::milliseconds get_debounce_delay() const
+    ardent::milliseconds get_debounce_delay() const
     {
         return m_debounce_delay;
     }
@@ -51,8 +51,8 @@ template <typename TCallback> class debounced_button : public i_loop_observer
   private:
     push_button m_button;
     TCallback m_press_callback;
-    estd::milliseconds m_last_pressed_time;
-    estd::milliseconds m_debounce_delay = estd::milliseconds{50};
+    ardent::milliseconds m_last_pressed_time;
+    ardent::milliseconds m_debounce_delay = ardent::milliseconds{50};
     bool m_last_button_state;
 };
 } // namespace ardent

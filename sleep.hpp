@@ -4,9 +4,9 @@
 
 namespace ardent
 {
-void sleep(estd::seconds duration);
-void sleep(estd::milliseconds duration);
-void sleep(estd::microseconds duration);
-estd::milliseconds millis();
-estd::microseconds micros();
+void sleep(ardent::seconds duration);
+void sleep(ardent::milliseconds duration);
+void sleep(ardent::microseconds duration);
+ardent::milliseconds millis();
+ardent::microseconds micros();
 } // namespace ardent

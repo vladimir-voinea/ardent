@@ -8,12 +8,12 @@
 namespace ardent
 {
 
-// Assuming existence of necessary includes for ardent::millis and estd::milliseconds
+// Assuming existence of necessary includes for ardent::millis and ardent::milliseconds
 
 template <typename TInputType, typename TCallback> class debounce
 {
   public:
-    debounce(TInputType &&input, TCallback &&callback, estd::milliseconds debounceTime = estd::milliseconds{50})
+    debounce(TInputType &&input, TCallback &&callback, ardent::milliseconds debounceTime = ardent::milliseconds{50})
         : m_input(std::forward<TInputType>(input)), m_callback(std::forward<TCallback>(callback)),
           m_debounceTime(debounceTime),
           m_lastState(input.read()), // Assuming TInputType has a read() method returning a bool
@@ -45,9 +45,9 @@ template <typename TInputType, typename TCallback> class debounce
   private:
     TInputType m_input;
     TCallback m_callback;
-    estd::milliseconds m_debounceTime;
+    ardent::milliseconds m_debounceTime;
     typename TInputType::reading_type m_lastState;
-    estd::milliseconds m_lastDebounceTime;
+    ardent::milliseconds m_lastDebounceTime;
     typename TInputType::reading_type m_lastDebouncedState = m_lastState;
 };
 

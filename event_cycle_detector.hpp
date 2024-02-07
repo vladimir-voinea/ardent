@@ -13,7 +13,7 @@ template <typename TInputType, typename TCallback> class event_cycle_detector
 {
   public:
     event_cycle_detector(TInputType &&input, TCallback &&onCompleteCallback,
-                         estd::milliseconds debounceTime = estd::milliseconds{50})
+                         ardent::milliseconds debounceTime = ardent::milliseconds{50})
         : m_debounce(
               std::forward<TInputType>(input), [this](auto newState) { this->onDebouncedStateChange(newState); },
               debounceTime),
