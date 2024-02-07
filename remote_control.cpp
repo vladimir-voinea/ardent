@@ -1,6 +1,6 @@
 #include "remote_control.hpp"
 
-#ifdef ARDUINO
+#ifndef PICO
 
 namespace ardent
 {

@@ -1,6 +1,6 @@
 #include "ultrasonic_sensor.hpp"
 
-#ifdef ARDUINO
+#ifndef PICO
 
 namespace ardent
 {

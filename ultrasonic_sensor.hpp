@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef ARDUINO
+#ifndef PICO
 
 #include "detail/HC-SR04/SR04.h"
 #include "distance.hpp"

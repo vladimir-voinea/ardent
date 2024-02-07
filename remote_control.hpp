@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef ARDUINO
+#ifndef PICO
 
 #include <Arduino.h>
 #include <detail/IRremote/IRremote.h>
